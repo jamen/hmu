@@ -1,0 +1,43 @@
+{
+  "name": "hmu",
+  "author": "Jamen Marzonie",
+  "version": "0.0.0",
+  "description": "Information tool based around plugins.",
+  "main": "lib",
+  "bin": "lib/cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamen/hmu"
+  },
+  "scripts": {
+    "test": "gulp; tape test",
+    "build": "gulp",
+    "prepublish": "gulp"
+  },
+  "private": false,
+  "files": [
+    "lib"
+  ],
+  "kewwords": [
+    "tool",
+    "information",
+    "development",
+    "workflow",
+    "pluggable"
+  ],
+  "devDependencies": {
+    "eslint": "^2.6.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "pre-commit": "^1.1.2",
+    "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "async-each": "^1.0.0",
+    "cli-list": "^0.1.6",
+    "minimist": "^1.2.0",
+    "resolve": "^1.1.7"
+  },
+  "license": "MIT"
+}
