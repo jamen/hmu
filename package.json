@@ -2,7 +2,7 @@
   "name": "hmu",
   "author": "Jamen Marzonie",
   "version": "0.1.0-0",
-  "description": "Information tool based around plugins.",
+  "description": "Plugin-based information fetching tool.",
   "main": "lib",
   "bin": "lib/cli.js",
   "repository": {
@@ -19,6 +19,7 @@
     "lib"
   ],
   "kewwords": [
+    "hmu",
     "tool",
     "information",
     "development",
