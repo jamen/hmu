@@ -3,18 +3,21 @@
 
 Hmu (hit me up) is an abstract _plugin-based_ information tool.  It is used for fetching various pieces of information through plugins made by the community, while keeping a clean and normalized output, so you can use plugins together at the same time.
 
-In order to use hmu, [you need to get plugins][plugins].
-
-Example plugins:
- - [`hmu-npm`][hmu-npm]: Check npm package name availability
- - [`hmu-gh`][hmu-gh]: Check GitHub user/organization name availability.
- - [`hmu-http`][hmu-http]: Check an HTTP server's status with GET requests.
-
-See [`awesome-hmu`][awesome-hmu] for a list of curated plugins and utilities.
+In order to use hmu, [you need to get plugins][plugins].  Also see [`awesome-hmu`][awesome-hmu] for a curated list of hmu plugins and utilities.
 
 ## Installation
 ```shell
 $ npm install -g hmu
+```
+
+## Example Plugins
+ - [`hmu-npm`][hmu-npm]: Check npm package name availability
+ - [`hmu-gh`][hmu-gh]: Check GitHub user/organization name availability.
+ - [`hmu-http`][hmu-http]: Check an HTTP server's status with GET requests.
+ -
+You can install all of these to start off with hmu:
+```
+$ npm install -g hmu-gh hmu-npm hmu-http
 ```
 
 ## Usage
