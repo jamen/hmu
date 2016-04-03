@@ -14,7 +14,7 @@ $ npm install -g hmu
  - [`hmu-npm`][hmu-npm]: Check npm package name availability
  - [`hmu-gh`][hmu-gh]: Check GitHub user/organization name availability.
  - [`hmu-http`][hmu-http]: Check an HTTP server's status with GET requests.
- -
+
 You can install all of these to start off with hmu:
 ```
 $ npm install -g hmu-gh hmu-npm hmu-http
