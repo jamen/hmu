@@ -37,7 +37,9 @@
     "async-each": "^1.0.0",
     "cli-list": "^0.1.6",
     "minimist": "^1.2.0",
-    "resolve": "^1.1.7"
+    "promise-circuit": "^0.2.0",
+    "resolve": "^1.1.7",
+    "sate": "^1.0.2"
   },
   "license": "MIT"
 }

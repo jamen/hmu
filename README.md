@@ -26,9 +26,19 @@ $ hmu <plugin> [...arguments], [...]
 ```
 Example:
 ```
+$ hmu npm osia
+```
+
+Separate multiple plugins with `,` (comma) using [`cli-list`](https://github.com/jamen/cli-list):
+```
 $ hmu npm osia, gh osiajs
 ```
-Separate multiple plugins with `,` (comma) using [`cli-list`](https://github.com/jamen/cli-list).
+
+Split input between multiple plugins with `~` (tilde):
+```
+$ hmu npm~gh osia
+# Equivalent to: npm osia, gh osia
+```
 
 ## Credits
 | ![jamen][avatar] |
