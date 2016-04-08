@@ -2,7 +2,7 @@
   "name": "hmu",
   "author": "Jamen Marzonie",
   "version": "1.0.0",
-  "description": "Plugin-based information fetching tool.",
+  "description": "A tool all about information.",
   "main": "lib",
   "bin": "lib/cli.js",
   "repository": {
