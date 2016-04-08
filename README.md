@@ -19,26 +19,16 @@ You can install all of these to start off with hmu:
 ```
 $ npm install -g hmu-gh hmu-npm hmu-http
 ```
+See [docs/GETTING-PLUGINS](docs/GETTING-PLUGINS.md) for more information, or [docs/WRITING-PLUGINS](docs/WRITING-PLUGINS.md) for instructions on how to create plugins.
 
 ## Usage
 ```shell
 $ hmu <plugin> [...arguments], [...]
 ```
-Example:
-```
-$ hmu npm osia
-```
+See [docs/USING-CLI](docs/USING-CLI.md) for more information.
 
-Separate multiple plugins with `,` (comma) using [`cli-list`](https://github.com/jamen/cli-list):
-```
-$ hmu npm osia, gh osiajs
-```
-
-Split input between multiple plugins with `~` (tilde):
-```
-$ hmu npm~gh osia
-# Equivalent to: npm osia, gh osia
-```
+## Documentation
+See the [`docs`](docs/) folder for information on how to use hmu, clone this repository to have it locally (offline).
 
 ## Credits
 | ![jamen][avatar] |
