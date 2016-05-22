@@ -4,17 +4,11 @@
   "version": "1.0.1",
   "description": "A tool all about information.",
   "main": "lib",
-  "bin": "lib/cli.js",
+  "bin": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jamen/hmu"
   },
-  "scripts": {
-    "test": "gulp; tape test",
-    "build": "gulp",
-    "prepublish": "gulp"
-  },
-  "private": false,
   "files": [
     "lib"
   ],
@@ -26,20 +20,16 @@
     "pluggable"
   ],
   "devDependencies": {
-    "eslint": "^2.6.0",
-    "eslint-config-airbnb": "^6.2.0",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^2.0.0",
-    "pre-commit": "^1.1.2",
+    "eslint": "^2.10.2",
+    "eslint-config-google": "^0.5.0",
     "tape": "^4.5.1"
   },
   "dependencies": {
-    "async-each": "^1.0.0",
     "cli-list": "^0.1.6",
+    "hmu-core": "^0.1.0",
     "minimist": "^1.2.0",
-    "promise-circuit": "^0.2.0",
-    "resolve": "^1.1.7",
-    "sate": "^1.0.2"
+    "promise-routine": "^1.0.0",
+    "resolve": "^1.1.7"
   },
   "license": "MIT"
 }
