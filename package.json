@@ -1,7 +1,7 @@
 {
   "name": "hmu",
   "author": "Jamen Marzonie",
-  "version": "2.0.0-0",
+  "version": "2.0.0-1",
   "description": "A tool all about information.",
   "main": "lib",
   "bin": "lib/index.js",
