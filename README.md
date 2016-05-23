@@ -1,47 +1,76 @@
-# hmu (hit me up)
-> A tool all about information.
+# Hit Me Up
+> Fetch name availability, server statuses, tweets, and lots of other information through plugins.
 
-Hmu (hit me up) is a tool all about information.   Things like fetching name availability on GitHub, npm, and Slack; to getting the status of a server; listing twitter feeds; or even all of these at once...  Hmu uses plugins created by the community [that use the same API][hmu-plugin].  You can mix and match these plugins together at the same time [using hmu's cli features](docs/USING-CLI.md).
+Hit Me Up is a tool for fetching all sorts of information through plugins hosted on npm.  Information can include things like name availability on services (like GitHub and Slack), checking server statuses, fetching tweets, and many other possibilities.
 
-![Example of hmu](docs/example.png)
+[<img src="https://asciinema.org/a/46407.png" height="250" alt="Screencast Demo">](https://asciinema.org/a/46407)
 
-In order to use hmu, [you need to get plugins][plugins].  Also see [`awesome-hmu`][awesome-hmu] for a curated list of hmu plugins and utilities.
-
-## Installation
+## Getting Started
+First, you want to install the hmu CLI globally from npm:
 ```shell
-$ npm install -g hmu
+$ npm install --global hmu
 ```
 
-## Example Plugins
-See [docs/GETTING-PLUGINS](docs/GETTING-PLUGINS.md) for more information, or [docs/WRITING-PLUGINS](docs/WRITING-PLUGINS.md) for instructions on how to create plugins.
-
-You can install all of these to start off with hmu:
- - [`hmu-npm`][hmu-npm]: Check npm package name availability
- - [`hmu-gh`][hmu-gh]: Check GitHub user/organization name availability.
- - [`hmu-http`][hmu-http]: Check an HTTP server's status with GET requests.
-```
-$ npm install -g hmu-gh hmu-npm hmu-http
-```
-
-## Usage
+#### Installing Plugins
+You can also install plugins globally with npm:
 ```shell
-$ hmu <plugin> [...arguments], [...]
+$ npm install --global hmu-npm hmu-gh hmu-slack
 ```
-See [docs/USING-CLI](docs/USING-CLI.md) for more information.
+(This will install [hmu-gh], [hmu-npm], and [hmu-slack] to start you off)
 
-## Documentation
-See the [`docs`](docs/) folder for information on how to use hmu, clone this repository to have it locally (offline).
+You can find plugins from [npm's `hmu-plugin` keyword index][npm-hmu-plugin] and install them globally too.
+
+#### Running Plugins
+Plugins can be ran very simply through the `hmu` CLI.  You specify the plugin name, and then input and options after it...  For example:
+```shell
+$ hmu npm foo bar --qux
+```
+In this example, `npm` is the plugin, `foo` and `bar` are the input, and `qux` is an option.
+
+The basic usage follows:
+```
+$ hmu <name> [...args]
+```
+
+Now, onto slightly more advanced usage, you can run multiple plugins at once by separating them with a comma (`,`):
+```shell
+$ hmu npm foo, gh bar
+```
+In this example, we have the plugins `npm` and `gh`, and their inputs `foo` and `bar` respectively.
+
+You can also "spread" one input between multiple plugins by separating the names with a tilde (`~`) like so:
+```shell
+$ hmu npm~gh foo bar
+```
+This is equivalent to doing:
+```
+$ hmu npm foo bar, gh foo bar
+```
+
+Plugins that are named unconventionally and don't start with `hmu-` can be ran if you start the name with the at symbol (`@`):
+```
+$ npm install --global some-plugin
+# ...
+$ hmu @some-plugin foo bar
+```
+
+#### Also See
+ - [hmu-core][hmu-core]: The core that the CLI is based on top of.  All plugins are compatible with the core.
+ - [Writing a Hit Me Up plugin][write-hmu-plugin].
 
 ## Credits
 | ![jamen][avatar] |
 |:---:|
 | [Jamen Marzonie][github] |
 
-  [avatar]: https://avatars.githubusercontent.com/u/6251703?v=3&s=125
-  [github]: https://github.com/jamen
-  [plugins]: https://www.npmjs.com/browse/keyword/hmu
-  [hmu-npm]: https://github.com/devjs/hmu-npm
-  [hmu-gh]: https://github.com/jamen/hmu-gh
-  [hmu-http]: https://github.com/jamen/hmu-http
-  [hmu-plugin]: https://github.com/jamen/hmu-plugin
-  [awesome-hmu]: https://github.com/jamen/awesome-hmu
+## License
+[MIT](LICENSE) &copy; Jamen Marzonie
+
+[avatar]: https://avatars.githubusercontent.com/u/6251703?v=3&s=125
+[github]: https://github.com/jamen
+[write-hmu-plugin]: https://gist.github.com/jamen/ed0c1cd85bc1908e94b838cf7b35874d
+[hmu-core]: https://github.com/jamen/hmu-core
+[hmu-gh]: https://npmjs.com/hmu-gh
+[hmu-npm]: https://npmjs.com/hmu-npm
+[hmu-slack]: https://npmjs.com/hmu-slack
+[npm-hmu-plugin]: https://www.npmjs.com/browse/keyword/hmu-plugin
