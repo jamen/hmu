@@ -6,38 +6,31 @@ var minimist = require('minimist')
 var list = require('cli-list')
 var chalk = require('chalk')
 
+// Parse argument lists into array of requests
 var lists = list(process.argv.slice(2))
 var requests = lists.reduce(function (requests, list) {
   var options = minimist(list)
   var input = options._
   var plugins = input.shift()
-
   if (plugins) {
-    var _plugins = plugins.split('~')
-    for (var i = 0, max = _plugins.length; i < max; i++) {
-      // Get and resolve name
-      var name = _plugins[i], plugin
-      if (name[0] === '@') plugin = name.slice(1)
-      else plugin = 'hmu-' + name
-
+    plugins.split('~').forEach(function (name) {
+      // Resolve plugin name
+      var plugin = name[0] === '@' ? name.slice(1) : 'hmu-' + name
       // Require globally installed plugin
       var target = requireg(plugin)
-
-      console.log(target, plugin)
-
       // Push request
       requests.push({ target, input, options, name })
-    }
+    })
   }
-
   return requests
 }, [])
 
+// Run requests with hmu-core
 hmu(requests, function (err, res) {
   if (err) throw err
   res.forEach(function (result, i) {
     result.forEach(function (data) {
-      console.log(requests[i].name, data)
+      if (data) console.log(chalk.blue(requests[i].name), data)
     })
   })
 })
